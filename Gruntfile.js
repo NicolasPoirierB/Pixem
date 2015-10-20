@@ -95,7 +95,7 @@ module.exports = function(grunt) {
 
 			},
 			js: {
-				files: 'app/charte/**/*.js',
+				files: 'app/Pixem/**/*.js',
 				tasks: ['browserify:prod'/*, 'uglify:prod'*/]
 			},
 			commonjs: {

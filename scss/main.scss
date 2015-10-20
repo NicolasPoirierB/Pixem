@@ -1,4 +1,4 @@
-@import "lagrange/base/_variables";
+@import "pixem/base/_variables";
 
 @import "common/bootstrap/_variables";
 @import "common/bootstrap/_mixins";
@@ -7,10 +7,11 @@
 @import "common/bootstrap/_normalize";
 @import "common/bootstrap/_scaffolding";
 
-@import "lagrange/utils/_utils";
+@import "pixem/utils/_utils";
 
-@import "lagrange/base/_texts";
-@import "lagrange/components/_forms";
+@import "pixem/base/_texts";
+@import "pixem/components/_forms";
+@import "pixem/components/_selectric";
 
 .base-font-size {
     font-size: 14px;
@@ -24,10 +25,22 @@
 [data-em] {
     border: 1px solid $color-dark-primary;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 50px 10px 20px;
+    position: relative;
 
     & + [data-em] {
         margin-top: 20px
+    }
+
+    .edit {
+        position: absolute;
+            top: 0;
+            right: 0;
+
+        text-align: center;
+        width: 40px;
+        height: 100%;
+        cursor: pointer;
     }
 }
 

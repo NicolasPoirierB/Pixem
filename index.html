@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css" />
 
         <script src="js/common.js"></script>
@@ -22,10 +23,14 @@
                         <div class="field">
                             <input type="number" id="base-font-number" placeholder="Default value of 16px" value="14" />
                         </div>
-                    </form>
-                    <br>
+                        <h3>You chose a base font of <span data-bind="base-font">16px</span></h3>
+                        <br>
 
-                    <h2>You chose a base font of <span data-bind="base-font">16px</span></h2>
+                        <h2>Use a Google Font!</h2>
+                        <select name="google-font-switcher">
+                            <option value="open-sans">Open Sans</option>
+                        </select>
+                    </form>
                 </div>
                 <div class="col-md-7 col-md-offset-1">
                     <h2>See the results here!</h2>
