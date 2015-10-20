@@ -1,6 +1,6 @@
 
 # Pixem
-Pixels to EMs, easy-peasy.
+Pixels and EMs, easy-peasy.
 
 ## What does it do?
 Pixem gives you a preview of pretty basic and common used font-sizes in **em** units based on a font-size you previously determined. It's simple, and works to give you a good feeling on what ratio to choose at a glance!
