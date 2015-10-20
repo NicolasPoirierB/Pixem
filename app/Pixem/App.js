@@ -29,5 +29,21 @@ $(document).ready(function(){
 		updateFontSizes(baseFontField.val());
 	}).trigger('change');
 
+	//=========================================================
+
 	$('select').selectric();
+
+	var currentFontFamily = 'Open Sans';
+	var alreadyLoadedFonts = [currentFontFamily];
+
+	$('#google-font-switcher').on('change.pixem', function(e){
+		var newFont = $(this).val();
+
+		if(alreadyLoadedFonts.indexOf(newFont) === -1){
+			$('head').append('<link href="https://fonts.googleapis.com/css?family=' + newFont.split(' ').join('+') + '" rel="stylesheet" type="text/css" />')
+			alreadyLoadedFonts.push(newFont);
+		}
+
+		baseFontDiv.css('font-family', newFont + ', Helvetica, Arial, sans-serif');
+	});
 });
