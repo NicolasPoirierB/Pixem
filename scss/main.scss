@@ -1,0 +1,64 @@
+@import "lagrange/base/_variables";
+
+@import "common/bootstrap/_variables";
+@import "common/bootstrap/_mixins";
+@import "common/bootstrap/_tooltip";
+@import "common/bootstrap/_grid";
+@import "common/bootstrap/_normalize";
+@import "common/bootstrap/_scaffolding";
+
+@import "lagrange/utils/_utils";
+
+@import "lagrange/base/_texts";
+@import "lagrange/components/_forms";
+
+.base-font-size {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.sample-text {
+    font-size: 1em;
+}
+
+[data-em] {
+    border: 1px solid $color-dark-primary;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+    & + [data-em] {
+        margin-top: 20px
+    }
+}
+
+[data-em="0.25"] {
+    font-size: 0.25em;
+}
+
+[data-em="0.5"] {
+    font-size: 0.5em;
+}
+
+[data-em="0.75"] {
+    font-size: 0.75em;
+}
+
+[data-em="0.9"] {
+    font-size: 0.9em;
+}
+
+[data-em="1.1"] {
+    font-size: 1.1em;
+}
+[data-em="1.25"] {
+    font-size: 1.25em;
+}
+[data-em="1.5"] {
+    font-size: 1.5em;
+}
+[data-em="2"] {
+    font-size: 2em;
+}
+[data-em="2.5"] {
+    font-size: 2.5em;
+}
