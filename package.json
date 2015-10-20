@@ -1,6 +1,6 @@
 {
-  "name": "NPB-Utils",
-  "title": "NPB-Utils",
+  "name": "Pixem",
+  "title": "Pixem",
   "version": "0.0.1",
   "homepage": "",
   "author": {
@@ -34,7 +34,7 @@
   },
   "keywords": [],
   "browser": {
-    "ns": "./app/charte/NameSpace.js",
+    "ns": "./app/Pixem/NameSpace.js",
     "jquery.validationEngine": "./bower_components/validationengine/js/jquery.validationEngine.js",
     "jquery.validationEngine-fr": "./bower_components/validationengine/js/languages/jquery.validationEngine-fr.js",
     "jquery.validationEngine-en": "./bower_components/validationengine/js/languages/jquery.validationEngine-en.js",

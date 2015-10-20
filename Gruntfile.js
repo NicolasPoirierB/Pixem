@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	var browserifyPackages = {};
-	browserifyPackages['js/app.js'] = ['app/charte/App.js'];
+	browserifyPackages['js/app.js'] = ['app/Pixem/App.js'];
 
 	// Project configuration.
 	grunt.initConfig({
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;'+
 			'*/\n\n',
 		// Task configuration.
-		
+
 		bowercopy: {
 			options: {
 				srcPrefix: 'bower_components',
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 					'scss/common/bootstrap' : 'bootstrap-sass/assets/stylesheets/bootstrap',
 				}
 			},
-			
+
 			vendor: {
 				options: {
 					destPrefix: 'js/vendor',
@@ -39,13 +39,13 @@ module.exports = function(grunt) {
 					'es5-sham.js' : 'es5-shim/es5-sham.min.js',
 					'imagesloaded.js' : 'imagesloaded/imagesloaded.js',
 					'jquery.selectric.min.js' : 'jquery-selectric/public/jquery.selectric.min.js'
-					
+
 				}
 			}
-				
-			
+
+
 		},
-		
+
 		concat: {
 			options: {
 				banner: '<%= banner %>',
@@ -60,21 +60,21 @@ module.exports = function(grunt) {
 				dest: "js/vendor/placeholders.jquery.js"
 			},
 		},
-		
+
 		uglify: {
 			options: {
 				banner:  '<%= banner %>'
 			},
-			
+
 			prebuild : {
 				files: {
 					'js/vendor/modernizr.js': ['bower_components/modernizr/modernizr.js'],
 					'js/vendor/lodash.js': ['bower_components/lodash/lodash.js'],
 					'js/vendor/placeholders.jquery.js': ['js/vendor/placeholders.jquery.js'],
-					
+
 				}
 			},
-			
+
 			prod: {
 				src: 'js/app.js',
 				dest: 'js/app.js'
@@ -83,16 +83,16 @@ module.exports = function(grunt) {
 				src: 'js/common.js',
 				dest: 'js/common.js'
 			}
-			
+
 		},
-		
+
 		watch: {
-			
+
 			scss: {
 				files: 'scss/**/*.scss',
-			
+
 				tasks: ['sass']
-			
+
 			},
 			js: {
 				files: 'app/charte/**/*.js',
@@ -103,7 +103,7 @@ module.exports = function(grunt) {
 				tasks: ['browserify:common', 'uglify:common']
 			},
 		},
-		
+
 		sass: {
 			development: {
 				options: {
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
 
 		browserify : {
 			options : {
-				external: ['greensock', 'jquery', 'gsapScrollToPlugin', 'promise', 'neutrino', 'imagesloaded', 'lodash', 'slick-carousel', 'selectric'],
+				external: ['jquery', 'selectric'],
 				browserifyOptions : {
 					debug: true
 				},
@@ -159,7 +159,7 @@ module.exports = function(grunt) {
 				},
 			}
 		},
-		
+
 	});
 
 	// Default task.
@@ -167,5 +167,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('prod', ['browserify:prod', 'uglify:prod']);
 	grunt.registerTask('jslibs', ['browserify:common', 'uglify:common']);
 	grunt.registerTask('prebuild', ['concat:placeholder', 'bowercopy', 'uglify:prebuild']);
-	
+
 };
